@@ -52,6 +52,7 @@ let obj  = [
     }
   ]
 const server = http.createServer((req,res)=>{
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.writeHead(201,"server provided",{"content-type":"application/json"});
     res.write(JSON.stringify(obj))
     res.end("")
