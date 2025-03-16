@@ -1,5 +1,4 @@
 const http  = require("http")
-const { stringify } = require("querystring")
 let obj  = [
     {
       "id": 1,
