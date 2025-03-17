@@ -52,10 +52,14 @@ let obj  = [
     }
   ]
 const server = http.createServer((req,res)=>{
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.writeHead(201,"server provided",{"content-type":"application/json"});
-    res.write(JSON.stringify(obj))
-    res.end("")
+  if(req.url="/home"){
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.writeHead(201,"server provided",{"content-type":"application/json"});
+     res.write("welcome")  
+     res.write(JSON.stringify(obj))
+      res.end("")
+  }
+  
 })
 
 server.listen(2100,()=>{
